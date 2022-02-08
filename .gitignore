@@ -14,7 +14,7 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-private.pem
-public.pem
+cert/key.private.pem
+cert/key.public.pem
 node_modules
 .env

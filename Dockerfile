@@ -5,8 +5,8 @@ WORKDIR /auth-service
 COPY . /auth-service
 
 RUN rm .env
-RUN rm private.pem
-RUN rm public.pem
+RUN rm ./cert/key.private.pem
+RUN rm ./cert/key.public.pem
 
 RUN npm install
 

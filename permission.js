@@ -3,12 +3,13 @@ const scopes = {
   messfarUser: "messfarUser",
 };
 
-const contentWithScope = (content, scopes) => ({
+const contentWithScopeAndAccountID = (content, accountID, scopes) => ({
   scopes: scopes,
+  accountID: accountID,
   content: content,
 });
 
 module.exports = {
-  contentWithScope,
+  contentWithScopeAndAccountID,
   scopes,
 };
