@@ -40,6 +40,7 @@ app.post(
               Just: (justToken) =>
                 R.pipe(
                   R.path([[0], "email"]),
+                  email => ({email}),
                   // Side effect
                   jwt.sign,
                   R.andThen((token) => ({
