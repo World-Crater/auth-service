@@ -15,7 +15,7 @@ async function verifyLIFF(accessToken) {
     });
   });
   if (response.client_id !== process.env.LINE_CLIENT_ID) {
-    return;
+    return new Error("wrong client id");
   }
   return response;
 }

@@ -70,6 +70,7 @@ app.post(
 app.post("/verifyLIFF", async (req, res) => {
   const verifyLIFFResponse = await verifyLIFF(req.body.accessToken);
   if (!verifyLIFFResponse) {
+    console.error("verify fail:", verifyLIFFResponse);
     res.status(403).json({
       error: "forbidden",
     });
@@ -270,6 +271,7 @@ app.post(
       const decodedToken = await jwt.verify(req.body.token);
       res.json(decodedToken);
     } catch (err) {
+      console.error("verifyAuthToken failed, error:", err);
       res.status(403).json({
         error: "forbidden",
       });
