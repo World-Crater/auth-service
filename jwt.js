@@ -23,10 +23,15 @@ function sign(content) {
 
 function verify(token) {
   return new Promise((resolve, reject) => {
-    jwt.verify(token, publicKey, function (err, decoded) {
-      if (err) return reject(err);
-      resolve(decoded);
-    });
+    jwt.verify(
+      token,
+      publicKey,
+      { algorithms: ["RS256"] },
+      function (err, decoded) {
+        if (err) return reject(err);
+        resolve(decoded);
+      }
+    );
   });
 }
 
